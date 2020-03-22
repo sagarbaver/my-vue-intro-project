@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="vieport" content="width=device-width, initial-scale=1.0">
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class="nav-bar"></div>
+
+    <div id="app">
+      <div class="product">
+      
+        <div class="product-image">
+          <img :src="image">
+        </div>
+
+        <div class="product-info">
+          <span v-if="onSale">
+            <h1> {{ product }}</h1>
+            <p> {{ description }}</p>
+            <p v-show="inventory > 10">In Stock</p>
+            <p v-show="inventory > 0 && inventory <= 10">Almost out of Stock!</p>
+            <p v-show="inventory === 0">Out of Stock</p>
+            <a :href="vueJsLink" target="_blank" rel="noreferrer noopener">Visit the Vue JS website</a> 
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
